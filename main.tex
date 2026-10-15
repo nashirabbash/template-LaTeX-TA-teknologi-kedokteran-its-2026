@@ -85,16 +85,8 @@
   \or December% 12
   \fi}
 
-% Pengaturan format judul bab (sebaris: BAB I PENDAHULUAN dengan 1 spasi)
-\usepackage{titlesec}
-\titleformat{\chapter}[block]{\bfseries\Large\centering}{BAB \Roman{chapter}\ }{0pt}{}
-\titleformat{\section}{\bfseries\large}{\MakeUppercase{\thesection}}{1ex}{\vspace{1ex}}
-\titleformat{\subsection}{\bfseries\large}{\MakeUppercase{\thesubsection}}{1ex}{}
-\titleformat{\subsubsection}{\bfseries\large}{\MakeUppercase{\thesubsubsection}}{1ex}{}
-\titlespacing{\chapter}{0ex}{0ex}{3ex}
-\titlespacing{\section}{0ex}{1ex}{0ex}
-\titlespacing{\subsection}{0ex}{0.5ex}{0ex}
-\titlespacing{\subsubsection}{0ex}{0.5ex}{0ex}
+% Gaya Heading 1--4, Gambar, dan Tabel
+\input{pustaka/gaya-teks.tex}
 
 \input{pustaka/variables.tex}
 
@@ -157,31 +149,8 @@
 \pagenumbering{roman}
 \setcounter{page}{1}
 
-% Label tabel dan gambar dalam bahasa indonesia
-\renewcommand{\figurename}{Gambar}
-\renewcommand{\tablename}{Tabel}
 
-% Pengaturan format caption (tebal Gambar X.X., titik, dan jarak rapat ke gambar)
-\makeatletter
-\setlength{\abovecaptionskip}{3pt}
-\setlength{\belowcaptionskip}{0pt}
-\long\def\@makecaption#1#2{%
-  \vskip\abovecaptionskip
-  \sbox\@tempboxa{\textbf{#1.} #2}%
-  \ifdim \wd\@tempboxa >\hsize
-    \textbf{#1.} #2\par
-  \else
-    \global \@minipagefalse
-    \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
-  \fi
-  \vskip\belowcaptionskip}
-\makeatother
-
-% Pengaturan ukuran indentasi paragraf
-\setlength{\parindent}{2em}
-
-% Pengaturan ukuran spasi paragraf
-\setlength{\parskip}{1ex}
+\paragraphtextstyle
 
 % Lembar pengesahan Bahasa Indonesia (Lampiran 2)
 \input{lainnya/lembar-pengesahan.tex}
@@ -199,23 +168,8 @@
 \input{abstrak/abstrak-en.tex}
 \clearpage
 
-% Daftar isi
-\renewcommand*\contentsname{DAFTAR ISI}
-\addcontentsline{toc}{chapter}{\contentsname}
-\tableofcontents
-\clearpage
-
-% Daftar gambar
-\renewcommand*\listfigurename{DAFTAR GAMBAR}
-\addcontentsline{toc}{chapter}{\listfigurename}
-\listoffigures
-\clearpage
-
-% Daftar tabel
-\renewcommand*\listtablename{DAFTAR TABEL}
-\addcontentsline{toc}{chapter}{\listtablename}
-\listoftables
-\clearpage
+% Daftar isi, gambar, tabel, dan simbol
+\input{pustaka/daftar-awal.tex}
 
 % Nomor halaman isi dimulai dari sini
 \pagenumbering{arabic}
@@ -240,6 +194,7 @@
 \renewcommand{\bibname}{}
 \begingroup
 \def\chapter*#1{}
+\paragraphtextstyle
 \printbibliography
 \endgroup
 \clearpage

@@ -7,157 +7,89 @@
 [![Fakultas](https://img.shields.io/badge/Fakultas-Kedokteran%20dan%20Kesehatan%20(FKK)-blue.svg)](https://www.its.ac.id/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
-Template [LaTeX](https://www.latex-project.org/) resmi dan komprehensif untuk penulisan **Proposal Seminar Proposal (Sempro)** maupun **Buku Tugas Akhir Lengkap (Semhas & Sidang Akhir)** yang telah dikonfigurasi khusus untuk mahasiswa **Departemen Teknologi Kedokteran**, **Fakultas Kedokteran dan Kesehatan (FKK)**, **Institut Teknologi Sepuluh Nopember (ITS) Surabaya** tahun 2026. Format mengacu pada pedoman tugas akhir ITS (*SK Rektor ITS No. 280 Tahun 2022*).
+Template LaTeX untuk menyusun proposal seminar proposal dan buku tugas akhir Program Studi Teknologi Kedokteran ITS. Isi Bab 1–3 dipakai bersama agar naskah proposal dapat dilanjutkan menjadi buku tugas akhir tanpa menyalin berkas. Contoh identitas dan isi masih perlu diganti sebelum dipakai. Perubahan format terbaru tercatat di [CHANGELOG.md](./CHANGELOG.md).
 
----
+## Pratinjau sampul proposal
 
-## 🎯 1 Repositori untuk Dua Kebutuhan (Dual-Mode)
+![Sampul proposal hasil kompilasi sempro.tex dengan data contoh](./sampul/preview-proposal.png)
 
-Repositori ini dirancang agar mahasiswa tidak perlu berganti tautan atau memindahkan naskah ketika beralih dari fase Sempro ke fase Tugas Akhir:
+## Pilih dokumen
 
 | Tipe Dokumen | File Utama (*Master*) | Cakupan Bab & Halaman |
 | :--- | :--- | :--- |
-| **Proposal Sempro** | [`sempro.tex`](./sempro.tex) *(atau `main.tex`)* | **Bab 1 s.d. Bab 3**, Daftar Pustaka |
-| **Buku Tugas Akhir** | [`buku-ta.tex`](./buku-ta.tex) | **Bab 1 s.d. Bab 5**, Kata Pengantar, Orisinalitas, Biodata Penulis |
+| **Proposal Sempro** | [`sempro.tex`](./sempro.tex) atau [`main.tex`](./main.tex) | Bab 1–3 dan daftar pustaka |
+| **Buku Tugas Akhir** | [`buku-ta.tex`](./buku-ta.tex) | Bab 1–5, kata pengantar, pernyataan orisinalitas, dan biodata |
 
-> [!TIP]
-> Semua variabel identitas diri (Nama, NRP, Pembimbing, Penguji, Judul) disimpan terpusat di [`pustaka/variables.tex`](./pustaka/variables.tex). Tulisan Bab 1–3 saat Sempro langsung terpakai otomatis di Buku Tugas Akhir tanpa perlu *copy-paste* ulang!
-
----
-
-## ✨ Kepatuhan Terhadap Pedoman Resmi ITS (SK Rektor No. 280/2022)
-
-1. **Preset Lengkap Departemen & Program Studi**:
-   - Program Studi: `Teknologi Kedokteran`
-   - Departemen: `Teknologi Kedokteran`
-   - Fakultas: `Kedokteran dan Kesehatan` (`FKK`)
-   - Kode Mata Kuliah: `KT234801` (Proposal) / `KT234802` (Tugas Akhir)
-2. **Sampul Resmi Terstandar**:
-   - Sempro: Format dasar kertas putih dengan pita biru horizontal khas ITS 10 mm (`sampul-luar-tipis.tex` / Lampiran 1).
-   - Buku TA: Hardcover biru tua ITS (`sampul-luar.tex` / Lampiran 6) dan sampul dalam (`sampul-dalam.tex` / Lampiran 7 & 8).
-3. **Format Judul Bab Sebaris**:
-   - Judul bab dicetak tebal, simetris di tengah (*centered*), sebaris dengan 1 spasi standar (`BAB I PENDAHULUAN`).
-4. **Penomoran Halaman Presisi (Subbab 2.1 & 3.2.f)**:
-   - Nomor halaman Romawi kecil (`ii, iii, ...`) di kanan bawah untuk bagian awal.
-   - Penomoran angka Arab (`1, 2, ...`) di kanan bawah dimulai dari Bab I Pendahuluan sampai akhir naskah.
-5. **Format Caption Gambar & Tabel**:
-   - Penomoran dua bagian (**Gambar 3.1.** / **Tabel 3.1.**) dengan judul tabel di atas dan judul gambar di bawah.
-6. **Manajemen Sitasi Standar APA Edisi ke-7**:
-   - Menggunakan `biblatex` dengan backend `biber` dan format resmi APA 7th edition (`style=apa`).
-7. **Dukungan Lingkungan Kerja Lengkap**:
-   - Siap pakai di **Visual Studio Code** dengan ekstensi *LaTeX Workshop*.
-   - Mendukung kompilasi otomatis melalui **GitHub Actions** CI/CD (`.github/workflows/ci.yaml`) yang mengompilasi kedua versi PDF sekaligus.
-   - Dapat diimpor langsung ke **Overleaf**.
+Identitas, judul, dan nama penguji diatur di [`pustaka/variables.tex`](./pustaka/variables.tex). Sampul bahasa Indonesia berbagi konten di [`sampul/konten-id.tex`](./sampul/konten-id.tex); versi Inggris memakai [`sampul/konten-en.tex`](./sampul/konten-en.tex).
 
 ---
 
-## 📁 Struktur Direktori
+## Format yang tersedia
 
-```text
-template-ta-teknologi-kedokteran-its/
-├── .github/workflows/       # Otomasi build GitHub Actions (CI/CD)
-├── .vscode/                 # Konfigurasi ekstensi LaTeX Workshop VS Code
-├── abstrak/                 # Berkas abstrak (Indonesia & Inggris)
-│   ├── abstrak-id.tex
-│   └── abstrak-en.tex
-├── bab/                     # Berkas isi bab naskah
-│   ├── 1-pendahuluan.tex
-│   ├── 2-tinjauan-pustaka.tex
-│   ├── 3-metodologi.tex
-│   ├── 4-pengujian-analisis.tex
-│   └── 5-penutup.tex
-├── gambar/                  # Berkas grafik, diagram, dan foto
-├── lainnya/                 # Lembar pengesahan, kata pengantar, dll.
-│   ├── lembar-pengesahan.tex
-│   └── lembar-pengesahan-en.tex
-├── program/                 # Berkas kode sumber lampiran (Python/C++)
-├── pustaka/                 # Daftar pustaka & konfigurasi variabel
-│   ├── pustaka.bib          # Basis data referensi BibTeX
-│   ├── tanda-hubung.tex     # Penyesuaian pemenggalan kata Indonesia
-│   └── variables.tex        # DATA PRIBADI (Nama, NRP, Dosen, Judul)
-├── sampul/                  # Halaman sampul luar & dalam
-├── .gitignore               # Mengabaikan berkas build (*.aux, *.log, *.pdf, dll)
-├── LICENSE                  # Lisensi MIT
-├── sempro.tex               # Berkas utama PROPOSAL SEMINAR PROPOSAL (Bab 1-3)
-├── buku-ta.tex              # Berkas utama BUKU TUGAS AKHIR LENGKAP (Bab 1-5)
-├── main.tex                 # Berkas default (kompatibel Overleaf / default viewer)
-└── README.md                # Dokumentasi petunjuk penggunaan
-```
+Template memakai halaman awal bernomor Romawi dan isi bernomor Arab. Bab, caption, paragraf, serta daftar memakai aturan bersama di [`pustaka/gaya-teks.tex`](./pustaka/gaya-teks.tex). Isi paragraf 12 pt dengan inden dan jarak setelah paragraf; daftar bernomor dan berpoin rapat antarbutir, tanpa jarak sebelum daftar. Daftar isi, gambar, tabel, dan simbol diatur di [`pustaka/daftar-awal.tex`](./pustaka/daftar-awal.tex). Font `txfonts` menyerupai Times, tetapi bukan berkas font Times New Roman.
+
+Sitasi memakai `biblatex` gaya APA dengan `biber`. Format ini disusun sebagai template; periksa kembali ketentuan resmi program studi dan pembimbing sebelum menyerahkan naskah.
 
 ---
 
-## 🚀 Panduan Penggunaan Cepat
+## Berkas utama
 
-### Langkah 1: Kloning Repositori
+| Lokasi | Fungsi |
+| :--- | :--- |
+| `main.tex`, `sempro.tex` | Dokumen proposal Bab 1–3 |
+| `buku-ta.tex` | Buku tugas akhir Bab 1–5 |
+| `pustaka/variables.tex` | Identitas, judul, dan nama pembimbing/penguji |
+| `pustaka/gaya-teks.tex` | Gaya heading, paragraf, daftar, dan caption |
+| `pustaka/daftar-awal.tex` | Daftar isi, gambar, tabel, dan simbol |
+| `abstrak/` | Abstrak Indonesia dan Inggris |
+| `sampul/` | Sampul luar dan dalam |
+| `bab/` | Isi Bab 1–5 |
+| `lainnya/` | Lembar pengesahan dan halaman pelengkap |
+| `pustaka/pustaka.bib` | Referensi untuk sitasi |
+
+---
+
+## Mulai memakai template
+
+Kloning proyek terlebih dahulu:
+
 ```bash
 git clone https://github.com/Aisarsyb/template-LaTeX-TA-teknologi-kedokteran-its-2026.git
 cd template-LaTeX-TA-teknologi-kedokteran-its-2026
 ```
 
-### Langkah 2: Sesuaikan Variabel Dokumen
-Buka berkas [`pustaka/variables.tex`](./pustaka/variables.tex) dan ubah data berikut sesuai data Anda:
-- `\name{...}`: Nama lengkap mahasiswa
-- `\nrp{...}`: Nomor Pokok Mahasiswa (NRP)
-- `\advisor{...}` & `\advisornip{...}`: Nama dan NIP Dosen Pembimbing Utama
-- `\coadvisor{...}` & `\coadvisornip{...}`: Nama dan NIP Dosen Pembimbing Kedua
-- `\tatitle{...}`: Judul naskah dalam Bahasa Indonesia
-- `\engtatitle{...}`: Judul naskah dalam Bahasa Inggris
+Siapkan distribusi TeX yang memiliki `pdflatex`, `biber`, serta paket yang dipakai dokumen (`biblatex-apa`, `txfonts`, `tabularx`, dan paket LaTeX standar). Dari direktori proyek, ubah data di [`pustaka/variables.tex`](./pustaka/variables.tex): `\name`, `\nrp`, `\advisor`, `\coadvisor`, `\tatitle`, `\engtatitle`, dan data NIP/penguji sesuai kebutuhan. Definisi variabel berbentuk `\newcommand{\name}{Nama Lengkap Mahasiswa}`; ganti isi dalam kurung kurawal kedua, bukan nama perintahnya.
 
-### Langkah 3: Menulis Isi Naskah
-Tuliskan isi naskah Anda pada berkas-berkas di folder [`bab/`](./bab/):
-- **Bab I**: Latar Belakang, Rumusan Masalah, Batasan Masalah, Tujuan, Manfaat, Sistematika Penulisan.
-- **Bab II**: Tinjauan Pustaka, Penelitian Terdahulu, Dasar Teori.
-- **Bab III**: Diagram Alir Penelitian, Perancangan Sistem / Alat, Protokol Pengujian.
-- **Bab IV**: Hasil Pengujian dan Analisis.
-- **Bab V**: Kesimpulan dan Saran.
+Isi abstrak pada [`abstrak/`](./abstrak/), Bab 1–5 pada [`bab/`](./bab/), lalu masukkan sumber rujukan ke [`pustaka/pustaka.bib`](./pustaka/pustaka.bib). Sitasi memakai `\textcite{kunci_sitasi}` atau `\parencite{kunci_sitasi}`. Tabel identitas abstrak saat ini memuat teks contoh “Nama Pembimbing dan Gelar” / “Advisor Name and Title” secara langsung; ganti di masing-masing berkas abstrak bila sudah diketahui.
 
-### Langkah 4: Menambahkan Referensi
-Masukkan referensi sitasi dalam format BibTeX ke dalam berkas [`pustaka/pustaka.bib`](./pustaka/pustaka.bib). Sitasi di naskah menggunakan perintah `\textcite{kunci_sitasi}` atau `\parencite{kunci_sitasi}`.
+Untuk menghasilkan proposal, jalankan:
 
----
-
-## 🛠️ Cara Kompilasi Dokumen
-
-### 1. Menggunakan Visual Studio Code (Sangat Disarankan)
-1. Pasang ekstensi **LaTeX Workshop** dari James-Yu.
-2. Buka folder template ini di VS Code.
-3. Buka berkas `sempro.tex/buku-ta.tex`.
-4. Tekan `Ctrl + Alt + B` untuk mengompilasi naskah (resep `pdflatex ➞ biber ➞ pdflatex × 2` akan berjalan otomatis).
-5. Tekan `Ctrl + Alt + V` untuk membuka pratinjau PDF.
-
-### 2. Menggunakan Terminal / CLI
-Jalankan perintah berikut di dalam direktori proyek:
 ```bash
-pdflatex main.tex
-biber main
-pdflatex main.tex
-pdflatex main.tex
+pdflatex -halt-on-error sempro.tex
+biber sempro
+pdflatex -halt-on-error sempro.tex
+pdflatex -halt-on-error sempro.tex
 ```
 
-### 3. Menggunakan Overleaf
-1. Unduh seluruh folder repositori ini sebagai berkas `.zip`.
-2. Buka [Overleaf](https://www.overleaf.com/) dan pilih **New Project** > **Upload Project**.
-3. Pastikan pengaturan *Compiler* diatur ke **pdfLaTeX** dan *TeX Live version* terbaru.
+Hasilnya `sempro.pdf`. Untuk buku tugas akhir, gunakan urutan sama dengan mengganti `sempro` menjadi `buku-ta`. `main.tex` juga menghasilkan proposal; gunakan `biber main` bila memilih berkas itu. Jalankan perintah di direktori proyek supaya jalur `\input` dan gambar ditemukan.
 
 ---
 
-## 💡 Tips & Panduan Penulisan
+## Pilihan penyunting
 
-- **Menyisipkan Gambar**:
-  Gunakan penentu posisi `[H]` agar posisi gambar tidak berpindah mendahului subbab berikutnya:
-  ```latex
-  \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{gambar/nama-gambar.png}
-    \caption{Keterangan Gambar Anda}
-    \label{fig:labelgambar}
-  \end{figure}
-  ```
-- **Istilah Asing**: Gunakan perintah `\emph{istilah}` untuk memformat teks miring (*italic*).
-- **Tanda Hubung Dokter–Pasien**: Gunakan `dokter--pasien` (dua strip) untuk tanda pisah en-dash yang rapi.
+Di Overleaf, unggah seluruh proyek, pilih berkas utama `sempro.tex` atau `buku-ta.tex`, dan gunakan compiler pdfLaTeX. Di VS Code, pasang LaTeX Workshop dan pilih berkas utama sebelum membangun; pastikan proses `biber` dijalankan setelah lintasan pertama `pdflatex`. Workflow [CI](./.github/workflows/ci.yaml) membangun `sempro.tex` dan `buku-ta.tex`.
 
----
+## Menyesuaikan format
 
-## 📄 Lisensi
+Heading 1–4, caption, serta token `\paragraphtextstyle` dan `\listtextstyle` berada di [`pustaka/gaya-teks.tex`](./pustaka/gaya-teks.tex). Token paragraf digunakan pada abstrak, bab, dan daftar pustaka. Token daftar berlaku global: antarbutir tanpa jarak tambahan, tanpa jarak sebelum daftar, dan menyisakan jarak setelah daftar. Daftar isi, daftar gambar, daftar tabel, dan daftar simbol bersumber dari [`pustaka/daftar-awal.tex`](./pustaka/daftar-awal.tex). Untuk memperbarui tampilan, ubah berkas bersama, bukan salinan aturan di tiap bab.
+
+
+Untuk menyisipkan gambar, simpan berkas di `gambar/`, lalu gunakan `\includegraphics` dalam lingkungan `figure` dan beri `\caption` agar masuk daftar gambar. Istilah asing dapat ditulis dengan `\emph{istilah}`.
+
+## Berkontribusi
+
+Ubah isi pada berkas bab atau abstrak yang terkait. Jika mengubah aturan format bersama, periksa hasil PDF proposal dan buku tugas akhir, lalu perbarui [CHANGELOG.md](./CHANGELOG.md) agar perubahan dapat ditelusuri.
+
+## Lisensi
 
 Berkas template ini dilisensikan di bawah [MIT License](./LICENSE). Silakan gunakan, bagikan, dan kembangkan untuk kebutuhan akademik mahasiswa Departemen Teknologi Kedokteran ITS.
