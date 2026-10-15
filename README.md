@@ -14,15 +14,15 @@ Pengguna Bun dapat mengganti `npx` dengan `bunx`. Jalankan tanpa `-g` bila skill
 
 ## Contoh pemakaian
 
-Buka folder kerja sendiri di agent yang mendukung skill, lalu beri perintah berikut dalam percakapan:
+Buka folder kerja sendiri di agent yang mendukung pemanggilan skill dengan garis miring, lalu ketik:
 
-> Gunakan skill tugas-akhir untuk membuat proyek TA di folder ini.
+> /tugas-akhir Buat proyek TA di folder ini.
 
 Agent memeriksa folder, menunjukkan tujuan, dan meminta izin sebelum menyalin isi template. Pilih folder kosong; jika folder kerja sudah berisi berkas lain, minta agent memakai subfolder baru yang kosong. Setelah proyek dibuat, lanjutkan misalnya dengan:
 
-> Gunakan skill tugas-akhir untuk membantu menulis Bab 1 berdasarkan rumusan masalah dan sumber yang saya berikan. Target saya proposal.
+> /tugas-akhir Bantu tulis Bab 1 berdasarkan rumusan masalah dan sumber yang saya berikan. Target saya proposal.
 
-> Gunakan skill tugas-akhir untuk memeriksa PDF proposal saya.
+> /tugas-akhir Periksa PDF proposal saya.
 
 Sesudah satu permintaan penulisan selesai, skill menginstruksikan agent membangun PDF dokumen target dan melaporkan hasil serta lokasi PDF untuk dibuka. Jika berkas bersama berubah tanpa target dokumen yang disebut, agent membangun proposal dan buku. Proses ini memerlukan perangkat LaTeX terpasang; skill tidak menyediakan compiler atau membuka preview PDF otomatis.
 
