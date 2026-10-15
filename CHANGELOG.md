@@ -31,7 +31,7 @@
 - Definisi Heading 1–4, caption Gambar dan Tabel, serta paragraf dipusatkan di `pustaka/gaya-teks.tex` dan digunakan oleh `main.tex`, `sempro.tex`, serta `buku-ta.tex`.
 - Heading 1 menggunakan 14 pt tebal, kapital, dan rata tengah; Heading 2 memakai 13 pt tebal; Heading 3–4 memakai 12 pt tebal.
 - Caption Gambar dan Tabel menggunakan 10 pt normal, rata tengah, dengan jarak setelah caption.
-- Token `\paragraphtextstyle` menetapkan teks normal 12 pt, indentasi baris pertama, perataan kiri-kanan, dan jarak setelah paragraf. Font mengikuti `txfonts`, font Times-compatible yang tersedia dalam template.
+- Token `\paragraphtextstyle` menetapkan teks normal 12 pt, indentasi baris pertama, perataan kiri-kanan, dan jarak setelah paragraf. Teks utama memakai Times New Roman dari `fonts/`; `txfonts` tetap menyediakan simbol matematika.
 
 ### Daftar awal
 - `pustaka/daftar-awal.tex` menyatukan daftar isi, daftar gambar, daftar tabel, dan daftar simbol. Ketiga dokumen utama memakai berkas yang sama.

@@ -1,4 +1,11 @@
 \usepackage{fontspec}
+\setmainfont[
+  Path=fonts/,
+  UprightFont=Times.TTF,
+  BoldFont=Timesbd.TTF,
+  ItalicFont=Timesi.TTF,
+  BoldItalicFont=Timesbi.TTF
+]{Times New Roman}
 \newfontfamily\coverfont[
   Path=fonts/,
   UprightFont=trebuc.ttf,
@@ -32,7 +39,7 @@
 }
 \listtextstyle
 
-% Isi daftar awal: 11 pt Times-compatible (txfonts), reguler, dengan titik penghubung ke nomor halaman.
+% Isi daftar awal: 11 pt Times New Roman, reguler, dengan titik penghubung ke nomor halaman.
 \usepackage[titles]{tocloft}
 \renewcommand{\cftchapfont}{\normalfont}
 \renewcommand{\cftchappagefont}{\normalfont}

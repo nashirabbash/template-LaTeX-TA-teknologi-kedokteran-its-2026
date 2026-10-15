@@ -16,7 +16,7 @@ Pasang skill dari fork repo ini melalui [CLI skills](https://github.com/vercel-l
 bunx skills add nashirabbash/template-LaTeX-TA-teknologi-kedokteran-its-2026 --skill tugas-akhir -g
 ```
 
-Tanpa `-g`, skill hanya dipasang untuk proyek saat ini. Instalasi tidak langsung mengisi folder kerja; agent menyalin template hanya ketika diminta dan setelah mendapat izin. Untuk menghasilkan PDF, komputer juga perlu distribusi TeX yang menyediakan `latexmk`, `xelatex`, `fontspec`, `biber`, `biblatex-apa`, dan `txfonts`. Berkas Trebuchet MS sudah tersedia dalam folder `fonts/` proyek.
+Tanpa `-g`, skill hanya dipasang untuk proyek saat ini. Instalasi tidak langsung mengisi folder kerja; agent menyalin template hanya ketika diminta dan setelah mendapat izin. Untuk menghasilkan PDF, komputer juga perlu distribusi TeX yang menyediakan `latexmk`, `xelatex`, `fontspec`, `biber`, `biblatex-apa`, dan `txfonts`. Berkas Times New Roman untuk isi dan Trebuchet MS untuk sampul sudah tersedia dalam folder `fonts/` proyek.
 
 ## Contoh pemakaian
 
@@ -43,4 +43,4 @@ latexmk -xelatex -halt-on-error sempro.tex
 latexmk -xelatex -halt-on-error buku-ta.tex
 ```
 
-Sampul membaca Trebuchet MS langsung dari berkas `.ttf` di folder `fonts/`, sehingga pengguna tidak perlu memasang font pada sistem. Hak cipta font tetap milik Microsoft; baca [EULA font](./skills/tugas-akhir/template/fonts/corefonts-eula.html). Di Overleaf, unggah seluruh isi proyek dan pilih XeLaTeX. Jika `latexmk` belum tersedia, jalankan `xelatex -halt-on-error sempro.tex`, `biber sempro`, lalu `xelatex -halt-on-error sempro.tex` dua kali; ganti `sempro` dengan `buku-ta` untuk buku. Perubahan format template tercatat di [CHANGELOG.md](./CHANGELOG.md). Lisensi kode: [MIT](./LICENSE); font tunduk pada EULA Microsoft.
+Teks isi memakai Times New Roman; sampul memakai Trebuchet MS. Kedua font dibaca langsung dari berkas `.ttf` di folder `fonts/`, sehingga pengguna tidak perlu memasang font pada sistem. Hak cipta font tetap milik pemegang hak masing-masing; baca [EULA font](./skills/tugas-akhir/template/fonts/corefonts-eula.html). Di Overleaf, unggah seluruh isi proyek dan pilih XeLaTeX. Jika `latexmk` belum tersedia, jalankan `xelatex -halt-on-error sempro.tex`, `biber sempro`, lalu `xelatex -halt-on-error sempro.tex` dua kali; ganti `sempro` dengan `buku-ta` untuk buku. Perubahan format template tercatat di [CHANGELOG.md](./CHANGELOG.md). Lisensi kode: [MIT](./LICENSE); font tunduk pada EULA Microsoft Core Fonts.
