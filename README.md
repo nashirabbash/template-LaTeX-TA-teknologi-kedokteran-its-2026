@@ -10,13 +10,13 @@ Gambar ini contoh sampul `sempro.tex`, bukan pratinjau langsung naskah pengguna.
 
 ## Instalasi
 
-Pasang skill dari repo ini melalui [CLI skills](https://github.com/vercel-labs/skills). Gunakan `-g` agar tersedia dari folder kerja mana pun:
+Pasang skill dari fork repo ini melalui [CLI skills](https://github.com/vercel-labs/skills). Perintah berikut memasang skill secara global agar bisa dipakai dari folder kerja mana pun:
 
 ```bash
-npx skills add Aisarsyb/template-LaTeX-TA-teknologi-kedokteran-its-2026 --skill tugas-akhir -g
+bunx skills add nashirabbash/template-LaTeX-TA-teknologi-kedokteran-its-2026 --skill tugas-akhir -g
 ```
 
-Pengguna Bun dapat memakai `bunx` sebagai pengganti `npx`. Tanpa `-g`, skill hanya dipasang untuk proyek saat ini. Instalasi tidak langsung mengisi folder kerja; agent menyalin template hanya ketika diminta dan setelah mendapat izin. Untuk menghasilkan PDF, komputer juga perlu distribusi TeX yang menyediakan `latexmk`, `pdflatex`, `biber`, `biblatex-apa`, dan `txfonts`.
+Tanpa `-g`, skill hanya dipasang untuk proyek saat ini. Instalasi tidak langsung mengisi folder kerja; agent menyalin template hanya ketika diminta dan setelah mendapat izin. Untuk menghasilkan PDF, komputer juga perlu distribusi TeX yang menyediakan `latexmk`, `pdflatex`, `biber`, `biblatex-apa`, dan `txfonts`.
 
 ## Contoh pemakaian
 
