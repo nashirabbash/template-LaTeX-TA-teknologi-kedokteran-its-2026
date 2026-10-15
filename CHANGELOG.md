@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### Distribusi skill
+- Sumber template dipindah ke `skills/tugas-akhir/template/` agar pengguna dapat memasang skill dan membuat proyek di folder kerja sendiri tanpa clone manual.
+- Skill meminta izin sebelum menyalin template, membantu penulisan berbasis data pengguna, dan membangun PDF setelah satu permintaan penulisan selesai.
+- README dan CI mengikuti lokasi baru; panduan instalasi serta contoh pemakaian ditambahkan.
+
 ### Abstrak
 - Identitas abstrak Indonesia dan Inggris memakai tabel tanpa border, seluruh teks tebal, dengan jarak 1ex antarbaris.
 - Nama pembimbing ditampilkan sebagai placeholder pembimbing utama; isi kata kunci dicetak tebal dan miring.
