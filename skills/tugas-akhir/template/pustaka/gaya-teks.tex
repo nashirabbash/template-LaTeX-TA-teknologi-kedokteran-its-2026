@@ -23,7 +23,7 @@
 }
 \listtextstyle
 
-% Isi daftar awal: 11 pt Times-compatible (txfonts), tanpa huruf tebal atau titik penghubung.
+% Isi daftar awal: 11 pt Times-compatible (txfonts), reguler, dengan titik penghubung ke nomor halaman.
 \usepackage[titles]{tocloft}
 \renewcommand{\cftchapfont}{\normalfont}
 \renewcommand{\cftchappagefont}{\normalfont}
@@ -45,12 +45,12 @@
 \setlength{\cftbeforesubsubsecskip}{1ex}
 \setlength{\cftbeforefigskip}{1ex}
 \setlength{\cftbeforetabskip}{1ex}
-\renewcommand{\cftchapleader}{\hfill}
-\renewcommand{\cftsecleader}{\hfill}
-\renewcommand{\cftsubsecleader}{\hfill}
-\renewcommand{\cftsubsubsecleader}{\hfill}
-\renewcommand{\cftfigleader}{\hfill}
-\renewcommand{\cfttableader}{\hfill}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftfigleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cfttableader}{\cftdotfill{\cftdotsep}}
 
 % Gambar dan Tabel: 10 pt reguler, rata tengah, dengan jarak setelah caption.
 \renewcommand{\figurename}{Gambar}
