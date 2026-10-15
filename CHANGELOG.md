@@ -20,6 +20,7 @@
 ### Sampul
 - Sampul luar dan sampul dalam bahasa Indonesia kini memakai satu sumber konten, `sampul/konten-id.tex`; duplikat `sampul/konten-luar.tex` dihapus. Sampul bahasa Inggris di `sampul/konten-en.tex` diselaraskan dengan susunan yang sama.
 - Tipografi sampul memakai bobot normal sebagai dasar; baris yang perlu tebal ditandai secara khusus.
+- Teks sampul luar dan dalam menggunakan Trebuchet MS lewat XeLaTeX; empat berkas `.ttf` tersedia di `fonts/` tanpa memerlukan pemasangan font sistem.
 
 ### Lembar pengesahan
 - Lembar pengesahan bahasa Indonesia dan Inggris disusun ulang agar menampilkan judul, informasi mahasiswa, keterangan persetujuan, lima baris pihak yang menyetujui, dan lokasi serta tanggal.

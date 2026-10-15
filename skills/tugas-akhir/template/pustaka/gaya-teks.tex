@@ -1,3 +1,12 @@
+\usepackage{fontspec}
+\newfontfamily\coverfont[
+  Path=fonts/,
+  UprightFont=trebuc.ttf,
+  BoldFont=Trebucbd.ttf,
+  ItalicFont=trebucit.ttf,
+  BoldItalicFont=trebucbi.ttf
+]{Trebuchet MS}
+
 % Heading 1--4: bab, subbab, anak subbab, dan subanak subbab.
 \usepackage{titlesec}
 \titleformat{\chapter}[block]{\bfseries\fontsize{14}{17}\selectfont\centering}{BAB \Roman{chapter}\ }{0pt}{\MakeUppercase}

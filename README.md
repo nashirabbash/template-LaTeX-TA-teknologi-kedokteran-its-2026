@@ -16,7 +16,7 @@ Pasang skill dari fork repo ini melalui [CLI skills](https://github.com/vercel-l
 bunx skills add nashirabbash/template-LaTeX-TA-teknologi-kedokteran-its-2026 --skill tugas-akhir -g
 ```
 
-Tanpa `-g`, skill hanya dipasang untuk proyek saat ini. Instalasi tidak langsung mengisi folder kerja; agent menyalin template hanya ketika diminta dan setelah mendapat izin. Untuk menghasilkan PDF, komputer juga perlu distribusi TeX yang menyediakan `latexmk`, `pdflatex`, `biber`, `biblatex-apa`, dan `txfonts`.
+Tanpa `-g`, skill hanya dipasang untuk proyek saat ini. Instalasi tidak langsung mengisi folder kerja; agent menyalin template hanya ketika diminta dan setelah mendapat izin. Untuk menghasilkan PDF, komputer juga perlu distribusi TeX yang menyediakan `latexmk`, `xelatex`, `fontspec`, `biber`, `biblatex-apa`, dan `txfonts`. Berkas Trebuchet MS sudah tersedia dalam folder `fonts/` proyek.
 
 ## Contoh pemakaian
 
@@ -39,8 +39,8 @@ Proyek hasil salinan memuat `sempro.tex` (proposal Bab 1–3), `buku-ta.tex` (bu
 Dari folder proyek hasil salinan, jalankan perintah berikut bila ingin membangun PDF tanpa agent:
 
 ```bash
-latexmk -pdf -halt-on-error sempro.tex
-latexmk -pdf -halt-on-error buku-ta.tex
+latexmk -xelatex -halt-on-error sempro.tex
+latexmk -xelatex -halt-on-error buku-ta.tex
 ```
 
-Jika `latexmk` belum tersedia, jalankan `pdflatex -halt-on-error sempro.tex`, `biber sempro`, lalu `pdflatex -halt-on-error sempro.tex` dua kali; ganti `sempro` dengan `buku-ta` untuk buku. Di Overleaf, unggah isi proyek dan pilih berkas utama sesuai dokumen. Perubahan format template tercatat di [CHANGELOG.md](./CHANGELOG.md). Lisensi: [MIT](./LICENSE).
+Sampul membaca Trebuchet MS langsung dari berkas `.ttf` di folder `fonts/`, sehingga pengguna tidak perlu memasang font pada sistem. Hak cipta font tetap milik Microsoft; baca [EULA font](./skills/tugas-akhir/template/fonts/corefonts-eula.html). Di Overleaf, unggah seluruh isi proyek dan pilih XeLaTeX. Jika `latexmk` belum tersedia, jalankan `xelatex -halt-on-error sempro.tex`, `biber sempro`, lalu `xelatex -halt-on-error sempro.tex` dua kali; ganti `sempro` dengan `buku-ta` untuk buku. Perubahan format template tercatat di [CHANGELOG.md](./CHANGELOG.md). Lisensi kode: [MIT](./LICENSE); font tunduk pada EULA Microsoft.
