@@ -20,6 +20,7 @@ Apply these rules to thesis prose:
 - Explain why a method fits the study and, where relevant, why alternatives were not chosen.
 - Present scientific arguments mainly in connected paragraphs; use lists or numbering when they make steps, criteria, or comparisons clearer.
 - Prefer natural, straightforward Indonesian; keep established technical terms when translating them would obscure meaning.
+- Dont use emdash (---) (--) and ";"
 
 ## Check
 
