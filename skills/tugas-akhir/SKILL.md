@@ -14,6 +14,8 @@ If a thesis project exists, use it. Otherwise, show the destination and obtain c
 ## Write
 
 Identify the requested section and available study data and sources. Find metadata in `pustaka/variables.tex`, abstracts in `abstrak/`, chapters in `bab/`, and references in `pustaka/pustaka.bib`; chapters 1–3 serve both documents. Use `/scientific-writing` to write the scientific content, check citations, and ground claims in evidence. Write clear scientific Indonesian with a medical perspective; explain method choices. Flag missing facts instead of inventing results or references.
+For Bab 1 writing or review, read `references/sistematika-penulisan-bab1.md` before editing.
+For Bab 2 writing or review, read `references/sistematika-penulisan-bab2.md` before editing.
 
 ## Check
 
