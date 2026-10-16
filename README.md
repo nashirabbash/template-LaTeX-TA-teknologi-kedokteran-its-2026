@@ -24,13 +24,17 @@ Buka folder kerja kosong di agent yang mendukung pemanggilan skill dengan garis 
 
 > /tugas-akhir Buat proyek TA di folder ini.
 
-Agent menunjukkan lokasi tujuan dan meminta izin sebelum menyalin berkas. Jika folder kerja sudah berisi berkas lain, pilih subfolder baru yang kosong agar tidak ada berkas tertimpa. Setelah proyek dibuat, gunakan skill yang sama untuk menulis atau memeriksa:
+Agent menunjukkan lokasi tujuan dan meminta izin sebelum menyalin berkas. Jika folder kerja sudah berisi berkas lain, pilih subfolder baru yang kosong agar tidak ada berkas tertimpa. Setelah proyek dibuat, isi data penelitian dan sumbernya, lalu minta bantuan sesuai tahap:
 
-> /tugas-akhir Bantu tulis Bab 1 berdasarkan rumusan masalah dan sumber yang saya berikan. Target saya proposal.
+> /tugas-akhir Tulis Bab 1 proposal berdasarkan data penelitian di bab/ dan sumber di pustaka/pustaka.bib. Tandai informasi yang belum tersedia.
+
+> /tugas-akhir Tulis Bab 4 buku TA berdasarkan hasil pengujian yang sudah saya masukkan ke proyek. Bedakan hasil teknis dari manfaat klinis yang belum diuji.
+
+> /tugas-akhir Audit Bab 1 dan Bab 3 terhadap panduan penulisan serta data dan sumber yang tersedia. Laporkan temuan saja, jangan ubah naskah.
 
 > /tugas-akhir Periksa PDF proposal saya.
 
-Sesudah satu permintaan penulisan selesai, agent membangun PDF dokumen target dan melaporkan hasil serta lokasi berkas untuk dibuka. Bila berkas yang dipakai bersama berubah tanpa target yang disebut, agent membangun kedua dokumen. Skill tidak membuka PDF secara otomatis.
+Saat menulis Bab 1–5, skill memakai [panduan sesuai bab](./skills/tugas-akhir/references/). Setelah menulis atau mengedit naskah, dua subagent baca-saja memeriksa sistematika dan dukungan bukti secara terpisah. Audit atau review tanpa permintaan edit hanya menghasilkan temuan. Sesudah mengedit berkas LaTeX, agent membangun PDF dokumen target dan melaporkan hasil serta lokasinya. Bila berkas bersama berubah tanpa target yang disebut, agent membangun kedua dokumen. Skill tidak membuka PDF secara otomatis.
 
 Proyek hasil salinan memuat `sempro.tex` (proposal Bab 1–3), `buku-ta.tex` (buku Bab 1–5), serta `main.tex` (alternatif proposal). Bab 1–3 dipakai bersama sehingga perubahan di sana memengaruhi kedua dokumen. Isi identitas dan pembimbing di `pustaka/variables.tex`, naskah di `bab/` dan `abstrak/`, serta sumber sitasi di `pustaka/pustaka.bib`. Ganti seluruh data contoh; periksa tulisan AI terhadap data penelitian, sumber asli, ketentuan resmi prodi, dan arahan pembimbing sebelum menyerahkan naskah.
 
