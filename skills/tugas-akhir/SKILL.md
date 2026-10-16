@@ -13,10 +13,21 @@ If a thesis project exists, use it. Otherwise, show the destination and obtain c
 
 ## Write
 
-Identify the requested section and available study data and sources. Find metadata in `pustaka/variables.tex`, abstracts in `abstrak/`, chapters in `bab/`, and references in `pustaka/pustaka.bib`; chapters 1–3 serve both documents. Use `/scientific-writing` to write the scientific content, check citations, and ground claims in evidence. Write clear scientific Indonesian with a medical perspective; explain method choices. Flag missing facts instead of inventing results or references.
-For Bab 1 writing or review, read `references/sistematika-penulisan-bab1.md` before editing.
-For Bab 2 writing or review, read `references/sistematika-penulisan-bab2.md` before editing.
+Identify requested section, study data, and sources in `pustaka/variables.tex`, `abstrak/`, `bab/`, and `pustaka/pustaka.bib`; chapters 1–3 serve both documents. For each Bab 1–5 being written or reviewed, read its matching `references/sistematika-penulisan-babN.md` first and follow its structure and criteria. Use `/scientific-writing` for scientific content. Ground every factual claim and citation in available evidence; flag missing facts instead of inventing results or references. Write from a medical perspective.
+
+Apply these rules to thesis prose:
+- Use technical terms familiar to general readers; explain terms needed for medical accuracy.
+- Explain why a method fits the study and, where relevant, why alternatives were not chosen.
+- Present scientific arguments mainly in connected paragraphs; use lists or numbering when they make steps, criteria, or comparisons clearer.
+- Prefer natural, straightforward Indonesian; keep established technical terms when translating them would obscure meaning.
 
 ## Check
 
-After editing, build the requested document once from the project root: `latexmk -xelatex -halt-on-error sempro.tex` or `latexmk -xelatex -halt-on-error buku-ta.tex`. If the target is unspecified and shared files changed, build both. If `latexmk` is unavailable, follow the README's `xelatex`/`biber` sequence. Report errors, PDF path, edits, and facts needing confirmation; check official requirements and supervisor guidance before submission.
+After writing or editing thesis content, or when the user requests a review, audit, or check, identify the affected chapters (or the chapters the user names), their matching `references/sistematika-penulisan-babN.md` guides, and available study data and sources. Spawn two read-only subagents **in parallel**, each with only its own brief so their judgments remain independent:
+
+- **Guide:** Read the matching `references/sistematika-penulisan-babN.md` files **relative to this SKILL.md** as the standards for each chapter's writing structure. Compare every relevant criterion with the chapter and cite the guide file and section for each unmet criterion, alongside the chapter passage, reason, and needed correction. Use the manuscript's headings to locate passages, not as a substitute for the guides.
+- **Evidence:** Use `/scientific-critical-thinking` to check whether sources, methods, and data support each substantive claim, especially clinical conclusions. Report unsupported claims with the passage, available or missing evidence, impact, and needed correction; distinguish unknown facts from demonstrated errors.
+
+Give both agents the chapter paths and relevant sources; give the Guide agent the exact matching guide paths. Ask them to report only findings they can locate, or explicitly say none. Present their reports separately without merging or reranking findings. After writing or editing, resolve substantiated findings before completion and report gaps that require missing facts; for review-only requests, leave the manuscript unchanged.
+
+Only after editing LaTeX files, build the requested document once from the project root: `latexmk -xelatex -halt-on-error sempro.tex` or `latexmk -xelatex -halt-on-error buku-ta.tex`. If the target is unspecified and shared files changed, build both. If `latexmk` is unavailable, follow the README's `xelatex`/`biber` sequence. Report errors, PDF path, edits, and facts needing confirmation; check official requirements and supervisor guidance before submission.
