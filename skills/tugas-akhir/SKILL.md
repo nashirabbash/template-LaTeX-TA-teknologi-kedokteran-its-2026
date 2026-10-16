@@ -1,20 +1,20 @@
 ---
 name: tugas-akhir
-description: Create a Medical Technology ITS thesis project in the user's workspace, help write its content, or check proposal and thesis PDFs.
+description: Create a Medical Technology ITS thesis project, write its proposal or thesis, or check its PDF.
 ---
 
 # Medical Technology ITS thesis
 
-Work in the user's current workspace. The adjacent `template/` directory contains the full project sources. Resolve it relative to this installed SKILL.md file, not the source repository or an internet URL.
+Resolve `template/` relative to this SKILL.md; work in the user's workspace.
 
 ## Start a project
 
-Inspect the workspace first. If it already contains a thesis project, work with that project and ask what the user wants done; do not copy the template again. Otherwise, offer to copy the template. Show the destination and obtain consent before copying. Copy the contents into an empty destination with `cp -a <installed-skill-directory>/template/. <workspace>/`. If the workspace contains other files, ask the user to choose a new empty subdirectory; never overwrite files or merge projects automatically. Confirm that `sempro.tex`, `buku-ta.tex`, `bab/`, and `pustaka/variables.tex` exist at the destination.
+If a thesis project exists, use it. Otherwise, show the destination and obtain consent before copying `<skill-directory>/template/.` into an empty directory. Confirm `sempro.tex`, `buku-ta.tex`, `bab/`, and `pustaka/variables.tex` exist.
 
 ## Write
 
-Ask which section needs work and what study data and sources are available. Identity, title, and supervisors belong in `pustaka/variables.tex`; abstracts in `abstrak/`; chapters in `bab/`; references in `pustaka/pustaka.bib`. Chapters 1–3 are shared by proposal and thesis. Write from the user's data and sources, using a medical perspective and clear scientific Indonesian; explain why a method was chosen. Mark missing study details for confirmation instead of inventing results, numbers, or references. After completing the requested edits, run the Check step once for the user's target document; if the target is unspecified and shared files changed, build both documents. Report the build result and PDF path, then show edits for user review. Do not rebuild after each individual file edit.
+Identify the requested section and available study data and sources. Find metadata in `pustaka/variables.tex`, abstracts in `abstrak/`, chapters in `bab/`, and references in `pustaka/pustaka.bib`; chapters 1–3 serve both documents. Use `/scientific-writing` to write the scientific content, check citations, and ground claims in evidence. Write clear scientific Indonesian with a medical perspective; explain method choices. Flag missing facts instead of inventing results or references.
 
 ## Check
 
-From the project root, build `sempro.tex` for the proposal or `buku-ta.tex` for the thesis with `latexmk -xelatex -halt-on-error <filename>.tex` when available. Otherwise, run `xelatex`, `biber`, then `xelatex` twice as described in the repository README. Body text loads bundled Times New Roman `.ttf` and covers load bundled Trebuchet MS `.ttf` directly from `fonts/`; no font setup is needed. Report compilation errors and the PDF path. A successful build does not validate scientific claims; check official department requirements and supervisor guidance before submission.
+After editing, build the requested document once from the project root: `latexmk -xelatex -halt-on-error sempro.tex` or `latexmk -xelatex -halt-on-error buku-ta.tex`. If the target is unspecified and shared files changed, build both. If `latexmk` is unavailable, follow the README's `xelatex`/`biber` sequence. Report errors, PDF path, edits, and facts needing confirmation; check official requirements and supervisor guidance before submission.
